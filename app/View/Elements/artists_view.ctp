@@ -1,7 +1,7 @@
 <?php foreach ($songs as $band => $songs): ?>
 	<!-- Artists view -->
 	<div class="col-xs-12 band-name" data-band="<?php echo h($band); ?>" data-scroll-content="true">
-        <div class="col-xs-10">
+        <div class="col-xs-8">
 		<h3>
             <?php echo h($band); ?>
         </h3>
@@ -14,7 +14,7 @@
             </small>
         </p>
         </div>
-        <div class="col-xs-2">
+        <div class="col-xs-4">
             <h3 class="text-right">
                 <small>
                     <span class="glyphicon glyphicon-play song-controls action-play-artist" title="<?php echo __('Play all albums'); ?>"></span>
@@ -46,12 +46,12 @@
 				</div>
 
 				<div class="col-md-9 col-xs-12 album" data-album="<?php echo h($album['album']); ?>">
-					<div class="col-xs-10">
+					<div class="col-xs-7">
 						<h4 class="truncated-name">
                             <?php echo h($album['album']); ?>
                         </h4>
 					</div>
-					<div class="col-xs-2">
+					<div class="col-xs-5">
 						<h4 class="text-right">
                             <small class="album-year">
                                 <?php echo h($album['year']); ?>

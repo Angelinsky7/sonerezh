@@ -1,0 +1,37 @@
+@media (max-width: 767px) {
+	ul.player-controls li span {
+		margin-right: 5px;
+	}
+	.pagination-xs {
+		padding-left: 20px;
+	}
+	.play_pause-buttons {
+		padding-left: 0px;
+	}
+	table tbody tr.hover td span.song-playtime {
+		display: none;
+	}
+
+	.band-name.hover h3 small span.song-controls,
+	.album.hover h4 small span.song-controls,
+	.album.hover h3 small span.song-controls,
+	.playlist-row.hover h4 small span.song-controls,
+	table tbody tr.hover td span.action-play,
+	table tbody tr.hover td span.action-add-to-playlist,
+	table tbody tr.hover td span.action-remove-from-queue,
+	table tbody tr.hover td span.action-remove-from-playlist {
+		display: inline;
+		cursor: pointer;
+	}
+
+	.playlist-header {
+		float: none;
+	}
+	.playlist-list {
+        margin: 10px;
+		padding-top: 0px;
+    }
+    .playtime-cell{
+        min-width: 70px;
+    }
+}

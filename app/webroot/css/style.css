@@ -177,6 +177,7 @@ ul.player-controls li.active.single span::after{
 ul.player-controls li.play{
     font-size: 30px;
 }
+
 .navbar-player .song-infos{
     margin-top: 10px;
 }
@@ -762,4 +763,8 @@ table tbody tr:hover td span.action-remove-from-playlist{
 }
 .lzld.lzld-loaded {
     opacity: 1;
+}
+
+.playlist-list{
+    padding-top: 20px;
 }

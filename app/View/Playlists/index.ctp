@@ -18,7 +18,7 @@
     </script>
 <?php $this->end(); ?>
 
-<div class="col-xs-3">
+<div class="col-sm-3 playlist-header">
     <div class="panel panel-default" data-view="playlists" style="margin-top: 20px;">
         <div class="panel-heading">
             <h4 class="panel-title"><?php echo __('Playlists'); ?></h4>
@@ -66,19 +66,19 @@
         </ul>
     </div>
 </div>
-<div class="col-xs-9" style="padding-top: 20px;">
+<div class="col-sm-9 playlist-list">
     <?php if (empty($playlists)): ?>
         <div class="alert alert-info">
             <?php echo __("You don't have playlists yet."); ?>
         </div>
     <?php else: ?>
         <div class="row playlist-row" data-playlist="<?php echo $playlistInfo['id']; ?>">
-            <div class="col-xs-10">
+            <div class="col-xs-8">
                 <h4>
                     <?php echo h($playlistInfo['name']); ?>
                 </h4>
             </div>
-            <div class="col-xs-2">
+            <div class="col-xs-4">
                 <h4 class="text-right">
                     <small>
                         <span class="glyphicon glyphicon-play song-controls action-play-playlist" title="<?php echo __('Play the playlist'); ?>"></span>

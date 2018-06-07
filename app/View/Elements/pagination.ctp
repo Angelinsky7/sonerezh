@@ -1,4 +1,4 @@
-<ul class="pagination">
+<ul class="pagination pagination-xs">
     <li <?php if (!$this->Paginator->hasPrev()) { echo 'class="disabled"'; } ?>><?php echo $this->Paginator->prev('«',array('tag' => false)); ?></li>
     <?php echo $this->Paginator->numbers(array(
         'tag' => 'li',

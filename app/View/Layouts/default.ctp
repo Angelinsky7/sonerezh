@@ -8,7 +8,7 @@
         <?php echo $title_for_layout; ?>
     </title>
     <?php echo $this->Html->meta('icon'); ?>
-    <?php echo $this->Html->css(array('bootstrap.min', 'jquery.fs.selecter.min', 'pace', 'notify', 'slider', 'style')); ?>
+    <?php echo $this->Html->css(array('bootstrap.min', 'jquery.fs.selecter.min', 'pace', 'notify', 'slider', 'style', 'mobile')); ?>
     <?php
     echo $this->Html->script("lazyload.min");
     ?>
@@ -60,7 +60,7 @@
 <div class="navbar navbar-default navbar-fixed-top navbar-player">
     <div class="container">
         <!-- Play/Pause buttons -->
-        <div class="col-md-2 col-xs-3">
+        <div class="play_pause-buttons col-md-2 col-xs-3">
             <ul class="player-controls">
                 <li><span class="glyphicon glyphicon-backward" id="backward"></span></li>
                 <li class="play"><span class="glyphicon glyphicon-play" id="play"></span></li>
@@ -150,7 +150,8 @@
     "jquery.slider",
     "jquery.scroll",
     "jquery.list",
-    "jquery.fs.selecter.min")); ?>
+    "jquery.fs.selecter.min",
+    "mobile")); ?>
 <?php echo $this->fetch('script'); ?>
 </body>
 </html>
