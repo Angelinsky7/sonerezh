@@ -56,7 +56,10 @@
                     $('#import-progress-bar').css('width', percentage + '%').text(percentage + '%');
                     $('#import-last-label').removeClass('hidden');
 
-                    var fullpath_last_import = res['update_result'][res['update_result'].length - 1]['file'] ? res['update_result'][res['update_result'].length - 1]['file'] : 'unknown';
+                    var fullpath_last_import = 'unknown';
+                    try {
+                        fullpath_last_import = res['update_result'][res['update_result'].length - 1]['file'] ? res['update_result'][res['update_result'].length - 1]['file'] : 'unknown';
+                    } catch(err) {}
                     var splitted_lat_import = fullpath_last_import.split('/');
                     $('#import-last').text(splitted_lat_import[splitted_lat_import.length - 1]);
                     ajaxImport();
