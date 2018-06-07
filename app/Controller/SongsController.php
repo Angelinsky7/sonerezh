@@ -123,14 +123,19 @@ class SongsController extends AppController {
                     $parse_result = $song_manager->parseMetadata();
 
                     $this->Song->create();
-                    if (!$this->Song->save($parse_result['data'])) {
+                    try {
+                        if (!$this->Song->save($parse_result['data'])) {
+                            $update_result[$file]['status'] = 'ERR';
+                            $update_result[$file]['message'] = __('Unable to save the song metadata to the database');
+                        } else {
+                            unset($parse_result['data']);
+                            $update_result[$i]['file'] = $file;
+                            $update_result[$i]['status'] = $parse_result['status'];
+                            $update_result[$i]['message'] = $parse_result['message'];
+                        }
+                    } catch (\Exception $e) {
                         $update_result[$file]['status'] = 'ERR';
-                        $update_result[$file]['message'] = __('Unable to save the song metadata to the database');
-                    } else {
-                        unset($parse_result['data']);
-                        $update_result[$i]['file'] = $file;
-                        $update_result[$i]['status'] = $parse_result['status'];
-                        $update_result[$i]['message'] = $parse_result['message'];
+                        $update_result[$file]['message'] = __('Unable to save the song metadata to the database: ' . $e->getMessage());
                     }
 
                     $imported[] = $file;
