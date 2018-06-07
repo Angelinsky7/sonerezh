@@ -126,7 +126,7 @@ class SongsController extends AppController {
                     try {
                         if (!$this->Song->save($parse_result['data'])) {
                             $update_result[$i]['file'] = $file;
-                            $update_result[$i]['status'] = 'ERR';
+                            $update_result[$i]['status'] = 'WARN';
                             $update_result[$i]['message'] = __('Unable to save the song metadata to the database');
                         } else {
                             unset($parse_result['data']);
@@ -136,7 +136,7 @@ class SongsController extends AppController {
                         }
                     } catch (\Exception $e) {
                         $update_result[$i]['file'] = $file;
-                        $update_result[$i]['status'] = 'ERR';
+                        $update_result[$i]['status'] = 'WARN';
                         $update_result[$i]['message'] = __('Unable to save the song metadata to the database: ' . $e->getMessage());
                     }
 
